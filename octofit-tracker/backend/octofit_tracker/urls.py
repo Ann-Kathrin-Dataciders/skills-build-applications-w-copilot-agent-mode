@@ -22,6 +22,9 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 import os
 
+from rest_framework.decorators import api_view
+
+@api_view(['GET'])
 def api_root(request):
     codespace_name = os.environ.get('CODESPACE_NAME', 'localhost')
     base_url = f"https://{codespace_name}-8000.app.github.dev/api/" if codespace_name != 'localhost' else "http://localhost:8000/api/"
